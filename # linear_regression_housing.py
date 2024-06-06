@@ -32,12 +32,12 @@ r2 = r2_score(y_test, y_pred)
 print(f"Mean Squared Error (MSE): {mse:.2f}")
 print(f"R-squared (R2): {r2:.2f}")
 
-# Optionally, save the model and data for future use
-# import joblib
-# joblib.dump(model, 'linear_regression_model.pkl')
-# X_test.to_csv('X_test.csv', index=False)
-# y_test.to_csv('y_test.csv', index=False)
-# pd.DataFrame(y_pred, columns=['Predicted_MedHouseVal']).to_csv('y_pred.csv', index=False)
+# saving the model and data for future use
+import joblib
+joblib.dump(model, 'linear_regression_model.pkl')
+X_test.to_csv('X_test.csv', index=False)
+y_test.to_csv('y_test.csv', index=False)
+pd.DataFrame(y_pred, columns=['Predicted_MedHouseVal']).to_csv('y_pred.csv', index=False)
 
 # Display the coefficients
 coefficients = pd.DataFrame(model.coef_, X.columns, columns=['Coefficient'])
